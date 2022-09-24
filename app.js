@@ -13,6 +13,8 @@ const result = document.querySelector('.result > p');
 const choiceRock = document.querySelector('#r');
 const choicePaper = document.querySelector('#p');
 const choiceScissors = document.querySelector('#s');
+const userDisplay = document.querySelector('#user-display')
+const computerDisplay = document.querySelector('#computer-display')
 
 
 /*----------------------------- Event Listeners -----------------------------*/
@@ -44,7 +46,7 @@ function convertToWord(letter) {
     if (letter === "p") {
         return "Paper";
     } else {
-         return "Scissor";
+         return "Scissors";
     }
 
 }
@@ -52,16 +54,22 @@ function convertToWord(letter) {
 function userWins(userChoice, computerChoice) {
     userScore ++;
     userScore_span.innerHTML = userScore;
+    userDisplay.innerHTML = 'You chose ' + convertToWord(userChoice);
+    computerDisplay.innerHTML = 'Computer chose ' + convertToWord(computerChoice);
     result.innerHTML = convertToWord(userChoice)  + ' beats ' + convertToWord(computerChoice)  + ' 👨‍💻 User Wins 🔥';
 }
 
 function computerWins(userChoice, computerChoice) {
     computerScore ++;
     computerScore_span.innerHTML = computerScore;
+    userDisplay.innerHTML = 'You chose ' + convertToWord(userChoice);
+    computerDisplay.innerHTML = 'Computer chose ' + convertToWord(computerChoice);
     result.innerHTML = convertToWord(computerChoice)  + ' beats ' + convertToWord(userChoice)  +' 💻 Computer Wins';
 }
 
 function draw() {
+    userDisplay.innerHTML = 'You chose ' + convertToWord(userChoice);
+    computerDisplay.innerHTML = 'Computer chose ' + convertToWord(computerChoice);
     result.innerHTML = "It's a draw";
 }
 

@@ -81,3 +81,11 @@ header > h1 {
     font-weight: bold;
     font-size: 25px;
 }
+
+.choices-message {
+    display: flex;
+    justify-content: space-around;
+    margin: 35px;
+    font-size: 20px;
+    font-style: italic;
+}
